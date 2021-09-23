@@ -5,46 +5,34 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
-	<style>
-		div{
-			background-color: red;
-		}
+	<link rel="stylesheet" href="mijncss.css" >
+	<script src=mijnscript.js></script>
 
-	</style>
 	<script>
-		function woordtesten(){
-			var deDom = document.getElementsByTagName("html");
-			console.log(deDom);
-			alert(deDom[0].baseURI)
-			var getal = parseInt( document.getElementById("invoergetal").value );
-			var woordlengte = document.getElementById("invoerwoord").value.length;
-			var antwoord = document.getElementById("uitvoer");
-			if(woordlengte < getal ){
-				antwoord.innerHTML = "past";
-				antwoord.style.backgroundColor = 'green';
-			}else{
-				antwoord.innerHTML = "past niet";
-				antwoord.style.backgroundColor = 'red';
-			}
-			antwoord.onclick = doedealert;
-
-			var lijstje = [22,53,88];
-			alert(  lijstje[1]  );
-
-			for(var x = 0 ; x < lijstje.length; x++){
-				console.log( lijstje[x]);
-			}
+		var aantalkeergeklikt = 0;
+		var model = [0,0,0,0,0];
+		function anderefunctie(){
 			
-		}
-		function doedealert(){
-				alert("dit is de alertfunctie");
+			var elementen = document.getElementsByTagName("div");
+			model[aantalkeergeklikt] = 1;
+			aantalkeergeklikt = aantalkeergeklikt + 1;
+
+
+			for(var i = 0; i < elementen.length ; i++){
+				elementen[i].style.backgroundColor = 'blue';
+				if(model[i]==1){
+					elementen[i].style.backgroundColor = 'yellow';	
+				}
+			}
 		}
 	</script>
 </head>
 <body>
-	getal:<input id=invoergetal><br>
-	woord:<input id=invoerwoord>
-	<button onclick=woordtesten() >klik hier</button>
-	<div id=uitvoer>a</div>
+	<button onclick=anderefunctie()>here we go</button>
+	<div id=mijnid1>hoi</div>
+	<div id=mijnid2>hoi</div>
+	<div id=mijnid3>hoi</div>
+	<div id=mijnid4>hoi</div>
+	<div id=mijnid5>hoi</div>
 </body>
 </html>
