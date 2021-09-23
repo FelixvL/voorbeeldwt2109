@@ -6,43 +6,45 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
 	<style>
-
+		div{
+			background-color: red;
+		}
 
 	</style>
 	<script>
-		function beginnen(ffproberen, tweedeparameter){   //parameter
-			var a = 3;
-			console.log("ff checken: "+ffproberen);
-			console.log("tweede parameter: "+tweedeparameter);
-			var b = herewego(tweedeparameter) + herewego(tweedeparameter) ;
-			alert("dit is de b: "+b);
+		function woordtesten(){
+			var deDom = document.getElementsByTagName("html");
+			console.log(deDom);
+			alert(deDom[0].baseURI)
+			var getal = parseInt( document.getElementById("invoergetal").value );
+			var woordlengte = document.getElementById("invoerwoord").value.length;
+			var antwoord = document.getElementById("uitvoer");
+			if(woordlengte < getal ){
+				antwoord.innerHTML = "past";
+				antwoord.style.backgroundColor = 'green';
+			}else{
+				antwoord.innerHTML = "past niet";
+				antwoord.style.backgroundColor = 'red';
+			}
+			antwoord.onclick = doedealert;
+
+			var lijstje = [22,53,88];
+			alert(  lijstje[1]  );
+
+			for(var x = 0 ; x < lijstje.length; x++){
+				console.log( lijstje[x]);
+			}
+			
 		}
-		function herewego(getal){
-			alert(getal);
-			return 18 * 2;
-		}
-		function tekstverwerken(){
-			var elem = document.getElementById("tekstinvoer").value;
-			console.log(elem);
-			var uitelem = document.getElementById("uitvoer");
-			uitelem.innerHTML = elem[1];
+		function doedealert(){
+				alert("dit is de alertfunctie");
 		}
 	</script>
 </head>
 <body>
-
-
-
-
-	<hr><hr><hr>
-	<input id="tekstinvoer">
-	<div id="uitvoer">iets</div>
-	<button onclick="tekstverwerken()">tekst verwerken</button>
-
-	<hr><hr><hr>
-	<button onclick="beginnen(55,'maandag')">Klik Hier</button><!--argument-->
-	<button onclick="beginnen(23,'woensdag')">Klik Hier</button>
-	<button onclick="beginnen(77,'zaterdag')">Klik Hier</button>
-	argument parameter
+	getal:<input id=invoergetal><br>
+	woord:<input id=invoerwoord>
+	<button onclick=woordtesten() >klik hier</button>
+	<div id=uitvoer>a</div>
 </body>
 </html>
