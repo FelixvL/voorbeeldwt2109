@@ -25,11 +25,16 @@
 			var elem = document.getElementById("tekstinvoer").value;
 			console.log(elem);
 			var uitelem = document.getElementById("uitvoer");
-			uitelem.innerHTML = elem;
+			uitelem.innerHTML = elem[1];
 		}
 	</script>
 </head>
 <body>
+
+
+
+
+	<hr><hr><hr>
 	<input id="tekstinvoer">
 	<div id="uitvoer">iets</div>
 	<button onclick="tekstverwerken()">tekst verwerken</button>
