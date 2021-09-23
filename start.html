@@ -10,14 +10,34 @@
 
 	</style>
 	<script>
-		function beginnen(){
-			alert("beginnen met een alert");
-			
+		function beginnen(ffproberen, tweedeparameter){   //parameter
+			var a = 3;
+			console.log("ff checken: "+ffproberen);
+			console.log("tweede parameter: "+tweedeparameter);
+			var b = herewego(tweedeparameter) + herewego(tweedeparameter) ;
+			alert("dit is de b: "+b);
 		}
-
+		function herewego(getal){
+			alert(getal);
+			return 18 * 2;
+		}
+		function tekstverwerken(){
+			var elem = document.getElementById("tekstinvoer").value;
+			console.log(elem);
+			var uitelem = document.getElementById("uitvoer");
+			uitelem.innerHTML = elem;
+		}
 	</script>
 </head>
 <body>
-	<button onclick="beginnen()">Klik Hier</button>
+	<input id="tekstinvoer">
+	<div id="uitvoer">iets</div>
+	<button onclick="tekstverwerken()">tekst verwerken</button>
+
+	<hr><hr><hr>
+	<button onclick="beginnen(55,'maandag')">Klik Hier</button><!--argument-->
+	<button onclick="beginnen(23,'woensdag')">Klik Hier</button>
+	<button onclick="beginnen(77,'zaterdag')">Klik Hier</button>
+	argument parameter
 </body>
 </html>
